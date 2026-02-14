@@ -1,0 +1,3 @@
+Model,Embedding,Precision,Recall,F1 Score,F1_Score
+BiLSTM,GloVe,0.9223368081078098,0.010013182548354,0.0128091743906252,
+Transformer,BERT-base,0.7862,0.8175,,0.8015
