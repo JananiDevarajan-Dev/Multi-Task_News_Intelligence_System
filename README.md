@@ -231,6 +231,8 @@ AWS S3  — Stores trained models &amp; preprocessing objects
 
 <hr>
 
+<h3>4️⃣ Place Model Checkpoints</h3>
+<p>Ensure your directory structure matches the expected model paths:</p>
 <pre><code>./Classification/Bert/                  # Fine-tuned BERT classifier
 ./Classification/label_encoder.pkl
 
