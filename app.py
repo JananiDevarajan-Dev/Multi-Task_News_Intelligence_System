@@ -239,7 +239,7 @@ st.markdown("<h2 class='main-title'>📰 AI-Powered News Analyzer</h2>", unsafe_
 
 tab1, tab2, tab3 = st.tabs([
     "📊 Category Classification",
-    "📝 Smart Summarization",
+    "📝 Extractive Summarization",
     "🧬 Named Entity Recognition"
 ])
 
@@ -293,7 +293,7 @@ with tab1:
 
 
 
-# ============================================================== TAB-2 SUMMARIZATION
+# ============================================================== TAB-2 EXTRACTIVE SUMMARIZATION
 with tab2:
     st.markdown("<p class='sub-head'>Generate summary with bullet points</p>", unsafe_allow_html=True)
 
@@ -330,6 +330,7 @@ with tab2:
 
                 import re
                 sentences = re.split(r"(?<=[.!?])\s+", summary_txt)
+                sentences = sentences[:3]   # ONLY TOP 3
                 bullets = "\n".join([f"✔️ {s}" for s in sentences if s.strip()])
 
                 st.success("Summary is ready")
