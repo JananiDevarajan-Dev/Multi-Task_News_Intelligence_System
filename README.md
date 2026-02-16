@@ -75,7 +75,7 @@ A unified <strong>Streamlit Web Application</strong> is built for inference and 
 <h3>🔹 Deployment Structure (Suggested)</h3>
 <pre><code>AWS EC2 — Hosts Streamlit Application
 AWS S3  — Stores trained models &amp; preprocessing objects
-AWS RDS — Stores user inference logs
+
 </code></pre>
 
 <hr>
@@ -96,7 +96,6 @@ AWS RDS — Stores user inference logs
 |   |-- bart_Summary_finetuned/     # Fine-tuned BART summarizer
 |
 |-- app.py                          # Streamlit UI for Classification, NER, Summarization
-|-- requirements.txt
 |-- README.md
 </code></pre>
 
@@ -232,25 +231,8 @@ AWS RDS — Stores user inference logs
 
 <hr>
 
-<h2>🛠️ Installation Guide</h2>
-
-<h3>1️⃣ Clone the Repository</h3>
-<pre><code>git clone &lt;your-repo-url&gt;
-cd &lt;project-folder&gt;
-</code></pre>
-
-<h3>2️⃣ Create and Activate a Virtual Environment</h3>
-<pre><code>conda create -n news_ai python=3.9
-conda activate news_ai
-</code></pre>
-
-<h3>3️⃣ Install Dependencies</h3>
-<pre><code>pip install -r requirements.txt
-</code></pre>
-
 <h3>4️⃣ Place Model Checkpoints</h3>
 <p>Ensure your directory structure matches the expected model paths:</p>
-
 <pre><code>./Classification/Bert/                  # Fine-tuned BERT classifier
 ./Classification/label_encoder.pkl
 
@@ -297,51 +279,7 @@ By default, Streamlit runs on:
   <li>Use IAM roles or environment variables for secure access.</li>
 </ul>
 
-<h3>RDS for Logging (Optional but Recommended)</h3>
-<p>Example logging schema:</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>user_id</td>
-      <td>Identifier for user/session</td>
-    </tr>
-    <tr>
-      <td>timestamp</td>
-      <td>Time of inference</td>
-    </tr>
-    <tr>
-      <td>task_type</td>
-      <td>Classification / NER / Summarization</td>
-    </tr>
-    <tr>
-      <td>model_family</td>
-      <td>From-Scratch ML / DL / Transformer</td>
-    </tr>
-    <tr>
-      <td>model_name</td>
-      <td>e.g., <code>bert_cls</code>, <code>bilstm_ner</code>, <code>bart_summary</code></td>
-    </tr>
-    <tr>
-      <td>input_length</td>
-      <td>Token/character length of the input text</td>
-    </tr>
-    <tr>
-      <td>output_summary_or_label</td>
-      <td>Predicted label / summary length / entity count</td>
-    </tr>
-    <tr>
-      <td>error_flag</td>
-      <td>Indicates if inference failed or succeeded</td>
-    </tr>
-  </tbody>
-</table>
 
 <hr>
 
@@ -373,40 +311,7 @@ Official information: <a href="https://msnews.github.io/pens" target="_blank">ht
 
 <hr>
 
-<h2>📈 Preview</h2>
 
-<p align="center">
-  <img src="login_preview.png" alt="login" width="800">
-</p>
-
-<p align="center">
-  <i>Log-In UI Page</i>
-</p>
-<p align="center">
-  <img src="classify_preview.png" alt="Classification" width="800">
-</p>
-
-<p align="center">
-  <i>Classification result screen (Predicted category + confidence).</i>
-</p>
-
-<p align="center">
-  <img src="summary_preview.png" alt="Summarization" width="800">
-</p>
-
-<p align="center">
-  <i>Summarization tab showing bullet-point summary.</i>
-</p>
-
-<p align="center">
-  <img src="ner_preview.png" alt="NER" width="800">
-</p>
-
-<p align="center">
-  <i>NER output with entity table and grouped display.</i>
-</p>
-
-<hr>
 
 <h2>🎓 Skill Takeaways</h2>
 <ul>
@@ -420,25 +325,4 @@ Official information: <a href="https://msnews.github.io/pens" target="_blank">ht
 
 <hr>
 
-<h2>📌 Future Enhancements</h2>
-<ul>
-  <li>Add sentiment analysis for articles and entities.</li>
-  <li>Support multilingual news articles.</li>
-  <li>Integrate LLM-based summarization or Q&amp;A.</li>
-  <li>Introduce a continuous training &amp; model update pipeline.</li>
-</ul>
 
-<hr>
-
-<h2>🙌 Author &amp; Contributions</h2>
-<p>
-This project is developed as an advanced NLP capstone demonstrating:
-</p>
-<ul>
-  <li>End-to-end multi-task NLP system design.</li>
-  <li>Hands-on experimentation with ML, DL, and Transformer models.</li>
-  <li>Practical deployment-oriented architecture.</li>
-</ul>
-<p>
-Contributions, suggestions, and improvements are welcome via issues and pull requests.
-</p>
